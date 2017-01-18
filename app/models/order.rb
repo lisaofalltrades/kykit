@@ -1,3 +1,4 @@
 class Order < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :purchases
+  belongs_to :purchaser, :class_name => "User"
 end
