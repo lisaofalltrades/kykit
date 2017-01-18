@@ -1,29 +1,25 @@
-class User < ActiveRecord::Base
-  # has_many :questions, dependent: :destroy
-  # has_many :answers, dependent: :destroy
-  #user data is dependent on user account
-  # has_many :comments
-  # has_many :votes
+# show the user create form
+get '/users/new' do
+  erb :'users/new'
+end
 
-  validates :email, uniqueness: true
-  validates :name, :email, :hashed_password, presence: true
-
-  def password
-    @password ||= BCrypt::Password.new(hashed_password)
+#show user's profile page
+get '/users/:id' do
+  @user = User.find(params[:id])
+  if current_user == @user
+    erb :'users/show'
+  else
+    redirect '/login'
   end
+end
 
-  def password=(new_password)
-    @password = BCrypt::Password.create(new_password)
-    self.hashed_password = @password
-  end
-
-  def self.authenticate(email, password)
-    @user = User.find_by(email: email)
-    return nil if @user.nil?
-    if @user.password == password
-      @user
-    else
-      nil
-    end
+#create user account
+post '/users' do
+  @user = User.new(params[:user])
+  if @user.save
+    login(@user)
+    redirect "users/#{@user.id}"
+  else
+    redirect '/'
   end
 end
