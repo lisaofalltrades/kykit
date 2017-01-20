@@ -6,8 +6,9 @@ class CreateShoes < ActiveRecord::Migration
       t.integer :size, null: false
       t.decimal :price, null: false
       t.string :condition, null: false
-      t.integer :distance, default: 50
+      t.integer :distance, null: false
       t.text :description, null: false
+      t.references :user
 
       t.timestamp
     end
