@@ -7,5 +7,6 @@ class CreateOrders < ActiveRecord::Migration
       t.string :shipping_address
 
       t.timestamp
+    end
   end
 end

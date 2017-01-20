@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -15,9 +15,24 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Kykit - Buy, Sell, Trade with fellow Sneakerheads!</title>
 </head>
 <body>
+  <nav>
+    <a href="/">Home</a><br>
+    <a href="users/new">Sign Up</a><br>
+    <a href="/login">Login</a><br>
+    <% if current_user %>
+
+    <form class="logoutForm" action="/logout" method="POST">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="logout">
+    </form>
+    <div>
+      <a href='/shoes/new'>Add a Listing</a>
+    </div>
+    <% end %>
+  </nav>
   <%= yield %>
 </body>
 </html>
