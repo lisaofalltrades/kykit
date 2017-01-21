@@ -32,13 +32,21 @@
   <input type="decimal" name="shoes[price]" placeholder="Price"><br>
 
   <label for="Condition">Condition</label>
-  <input type='text' name="shoes[condition]" placeholder='Condition'><br>
+  <select name="shoes[condition]">
+    <option value="Brand New">Brand New</option>
+    <option value="Like New">Like New</option>
+    <option value="Good">Good</option>
+    <option value="Tore Up">Tore Up</option>
+  </select><br>
 
-  <label for="Distance">Distance(miles)</label>
-  <input type="text" name="shoes[distance]" placeholder="Distance"><br>
+  <label for="zip code">Zip Code</label>
+  <input type="zip_code" name="shoes[zip_code]" placeholder="Zip Code"><br>
+
+  <label for="Distance">Distance</label>
+  <input type="text" name="shoes[distance]" placeholder="Distance">miles<br>
 
   <label for="Description">Description</label>
-  <input type='text' name="shoes[description]" placeholder='Description'><br>
+  <textarea name="shoes[description]" rows="10" cols="30" placeholder='Description'></textarea><br>
 
   <input type="submit"  value="Add New Listing">
   </form>

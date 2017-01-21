@@ -5,7 +5,29 @@
       <b>Size:</b> <%= @shoe.size %><br>
       <b>Price:</b> <%= @shoe.price %><br>
       <b>Condition:</b> <%= @shoe.condition %><br>
-      <b>Distance(miles):</b> <%= @shoe.distance %><br>
+      <b>Zip Code:</b> <%= @shoe.zip_code %><br>
+      <b>Distance:</b> <%= @shoe.distance %> miles<br>
       <b>Description:</b> <%= @shoe.description %><br>
   </ul>
+  <div id="map"></div>
+<script>
+
+  function initMap() {
+    var myLatLng = {lat: -25.363, lng: 131.044};
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: myLatLng
+    });
+
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Hello World!'
+    });
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
 </body>

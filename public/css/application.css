@@ -65,3 +65,9 @@ input[type=submit]:hover {
   color: black;
   text-align: center;
 }
+.browse-shoes{
+  text-align: center;
+}
+#map {
+        height: 100%;
+      }
