@@ -1,3 +1,8 @@
-<% @shoes.each do |shoe|%>
-  <li class="all-shoes">$<%= shoe.price %> <a class="shoe" href="/shoes/<%= shoe.id%>"><%= shoe.title %></a></li>
+
+<% if @shoes.count >= 1 %>
+  <% @shoes.each do |shoe|%>
+    <li class="all-shoes">$<%= shoe.price %> <a class="shoe" href="/shoes/<%= shoe.id%>"><%= shoe.title %></a></li>
+  <% end %>
+<% else %>
+  <%= "Sorry, there are no shoes for sale." %>
 <% end %>
