@@ -8,7 +8,7 @@ class CreateShoes < ActiveRecord::Migration
       t.string :condition, null: false
       t.integer :zip_code, null: false
       t.integer :distance, null: false
-      t.text :description, null: false
+      t.text :description
       t.integer :seller_id
 
       t.timestamp

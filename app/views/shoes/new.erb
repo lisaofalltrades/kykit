@@ -3,13 +3,22 @@
   <form action='/shoes' method='POST'>
 
   <label for="image">Image</label>
-  <input type="file" name="pic" accept="image/*"><br>
+  <input type="file" accept="image/*" capture="camera" id="camera">
 
   <label for="title">Title</label>
   <input type='text' name="shoes[title]" placeholder='Title'><br>
 
   <label for="Brand">Brand</label>
-  <input type="text" name="shoes[brand]"  placeholder="Brand"><br>
+  <select name="shoes[brand]"><br>
+    <option value="adidas">adidas</option>
+    <option value="asics">Asics</option>
+    <option value="Converse">Converse</option>
+    <option value="Jordan">Jordan</option>
+    <option value="new balance">New Balance</option>
+    <option value="nike">Nike</option>
+    <option value="Puma">Puma</option>
+    <option value="Vans">Vans</option>
+  </select><br>
 
   <label for="Size">Size</label>
   <select name="shoes[size]">
@@ -26,6 +35,10 @@
     <option value="9">9</option>
     <option value="9.5">9.5</option>
     <option value="10">10</option>
+    <option value="10">10.5</option>
+    <option value="10">11</option>
+    <option value="10">11.5</option>
+    <option value="10">12</option>
   </select><br>
 
   <label for="Price">Price</label>
@@ -33,10 +46,10 @@
 
   <label for="Condition">Condition</label>
   <select name="shoes[condition]">
-    <option value="Brand New">Brand New</option>
-    <option value="Like New">Like New</option>
-    <option value="Good">Good</option>
-    <option value="Tore Up">Tore Up</option>
+    <option value="Dead Stock">Dead Stock</option>
+    <option value="Near Dead Stock">Near Dead Stock</option>
+    <option value="Worn">Worn</option>
+    <option value="Beaters">Beaters</option>
   </select><br>
 
   <label for="zip code">Zip Code</label>
@@ -45,7 +58,7 @@
   <label for="Distance">Distance</label>
   <input type="text" name="shoes[distance]" placeholder="Distance">miles<br>
 
-  <label for="Description">Description</label>
+  <label for="Description">Description</label><br>
   <textarea name="shoes[description]" rows="10" cols="30" placeholder='Description'></textarea><br>
 
   <input type="submit"  value="Add New Listing">
