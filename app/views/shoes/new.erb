@@ -1,13 +1,45 @@
 <h1>New Listing</h1>
 <section class="new-shoe-listing">
   <form action='/shoes' method='POST'>
+
+  <label for="image">Image</label>
+  <input type="file" name="pic" accept="image/*"><br>
+
+  <label for="title">Title</label>
   <input type='text' name="shoes[title]" placeholder='Title'><br>
+
+  <label for="Brand">Brand</label>
   <input type="text" name="shoes[brand]"  placeholder="Brand"><br>
-  <input type="number" name="shoes[size]" placeholder="Size" min="4" max="12"><br>
-  <input type="text" name="shoes[price]" placeholder="Price"><br>
+
+  <label for="Size">Size</label>
+  <select name="shoes[size]">
+    <option value="4">4</option>
+    <option value="4.5">4.5</option>
+    <option value="5">5</option>
+    <option value="5.5">5.5</option>
+    <option value="6">6</option>
+    <option value="6.5">6.5</option>
+    <option value="7">7</option>
+    <option value="7.5">7.5</option>
+    <option value="8">8</option>
+    <option value="8.5">8.5</option>
+    <option value="9">9</option>
+    <option value="9.5">9.5</option>
+    <option value="10">10</option>
+  </select><br>
+
+  <label for="Price">Price</label>
+  <input type="decimal" name="shoes[price]" placeholder="Price"><br>
+
+  <label for="Condition">Condition</label>
   <input type='text' name="shoes[condition]" placeholder='Condition'><br>
+
+  <label for="Distance">Distance(miles)</label>
   <input type="text" name="shoes[distance]" placeholder="Distance"><br>
-  <input type='textbox' name="shoes[description]" placeholder='Description'><br>
+
+  <label for="Description">Description</label>
+  <input type='text' name="shoes[description]" placeholder='Description'><br>
+
   <input type="submit"  value="Add New Listing">
   </form>
 </section>

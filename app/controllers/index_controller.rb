@@ -1,3 +1,4 @@
 get '/' do
-  erb :'users/index'
+  @shoes = Shoe.all
+  erb :'index'
 end

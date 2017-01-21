@@ -1,5 +1,6 @@
 get '/shoes' do
-  erb :"shoes/index"
+  @shoes = Shoe.all
+  erb :"shoes/_index"
 end
 
 get '/shoes/new' do
@@ -13,4 +14,18 @@ post '/shoes' do
     else
       redirect '/shoes/new'
     end
+end
+
+get '/shoes/:id/edit' do
+  @shoe = Shoe.find(params[:id])
+  if current_user
+    erb :'shoes/edit'
+  else
+    redirect '/'
+  end
+end
+
+get '/shoes/:id' do
+  @shoe = Shoe.find(params[:id])
+  erb :'shoes/show'
 end

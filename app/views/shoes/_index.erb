@@ -1,0 +1,3 @@
+<% @shoes.each do |shoe|%>
+  <li class="all-shoes">$<%= shoe.price %> <a class="shoe" href="/shoes/<%= shoe.id%>"><%= shoe.title %></a></li>
+<% end %>
